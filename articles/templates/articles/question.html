@@ -1,2 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/question.css' %}">
+  <div class="wrapper">
+    <div class="wrapper-div d-flex row text-center justify-content-center">
+      <h1>No.1 Question</h1>
+      <img src="" alt="">
+      <button>Choice1</button>
+      <button>Choice2</button>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,11 @@
+/* font-family: 'NanumSquare', sans-serif */
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+
+@font-face {
+    font-family: 'brawl';
+    src: url('/static/fonts/LilitaOne-Regular.ttf') format('truetype')
+}
+
+* {
+    font-family: 'NanumSquare', sans-serif;
+}
