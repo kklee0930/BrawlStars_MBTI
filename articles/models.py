@@ -24,3 +24,8 @@ class Choices(models.Model):
     F_choice = models.PositiveSmallIntegerField(default=0)
     P_choice = models.PositiveSmallIntegerField(default=0)
     J_choice = models.PositiveSmallIntegerField(default=0)
+    
+class Brawlers(models.Model):
+    name = models.CharField(max_length=25)
+    mbti = models.CharField(max_length=4)
+    quote = models.TextField()
