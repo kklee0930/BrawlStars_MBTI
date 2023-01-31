@@ -12,18 +12,10 @@ class Questions(models.Model):
         blank=True,
         null=True)
     question = models.TextField(max_length=200)
-    answer1 = models.TextField(max_length=200)
-    answer2 = models.TextField(max_length=200)
-
-class Choices(models.Model):
-    I_choice = models.PositiveSmallIntegerField(default=0)
-    E_choice = models.PositiveSmallIntegerField(default=0)
-    S_choice = models.PositiveSmallIntegerField(default=0)
-    N_choice = models.PositiveSmallIntegerField(default=0)
-    T_choice = models.PositiveSmallIntegerField(default=0)
-    F_choice = models.PositiveSmallIntegerField(default=0)
-    P_choice = models.PositiveSmallIntegerField(default=0)
-    J_choice = models.PositiveSmallIntegerField(default=0)
+    answer1 = models.TextField(max_length=200, blank=True)
+    answer1_letter = models.CharField(max_length=1, blank=True)
+    answer2 = models.TextField(max_length=200, blank=True)
+    answer2_letter = models.CharField(max_length=1, blank=True)
     
 class Brawlers(models.Model):
     name = models.CharField(max_length=25)

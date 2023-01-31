@@ -1,40 +1,41 @@
 from django.shortcuts import render
-from .models import Questions, Choices
+from .models import Questions
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def welcome(request):
     context = {}
     return render(request, 'articles/welcome.html', context)
 
-def result(request):
-    choice = Choices()
+@csrf_exempt
+def question(request):
+    question = Questions.objects.get(pk=1)
     mbti = ''
-    if choice.I_choice > choice.E_choice:
-        mbti += 'I'
-    else:
-        mbti += 'E'
-        
-    if choice.S_choice > choice.N_choice:
-        mbti += 'S'
-    else:
-        mbti += 'N'
-
-    if choice.T_choice > choice.F_choice:
-        mbti += 'T'
-    else:
-        mbti += 'F'
-
-    if choice.P_choice > choice.J_choice:
-        mbti += 'P'
-    else:
-        mbti += 'J'
-        
-    final_mbti = Brawlers.mbti(mbti)
     context = {
+        'question': question,
+    }
+    return render(request, 'articles/question.html', context)
+
+@csrf_exempt
+def ajax(request):
+    pk = request.POST.get('pk')
+    letter = request.POST.get('letter')
+    mbti = request.POST.get('mbti')
+    pk = int(pk) + 1
+    mbti += letter
+    question = Questions.objects.get(pk=pk)
+    data = {
+        'question': question.question,
+        'question_pk': question.pk,
+        'question_ans1': question.answer1,
+        'question_letter1': question.answer1_letter,
+        'question_ans2': question.answer2,
+        'question_letter2': question.answer2_letter,
         'mbti': mbti,
     }
-    return render(request, 'articles/result.html', context)
+    return JsonResponse(data)
 
-def question(request):
-    context = {}
-    return render(request, 'articles/question.html', context)
+def result(request):
+    
+    return render(request, 'articles/result.html')
