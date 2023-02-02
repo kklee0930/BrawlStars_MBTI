@@ -19,5 +19,13 @@ class Questions(models.Model):
     
 class Brawlers(models.Model):
     name = models.CharField(max_length=25)
+    image = ProcessedImageField(
+        upload_to='images',
+        format='JPEG',
+        processors=[ResizeToFill(500,500)],
+        options={'quality': 70},
+        blank=True,
+        null=True
+    )
     mbti = models.CharField(max_length=4)
     quote = models.TextField()

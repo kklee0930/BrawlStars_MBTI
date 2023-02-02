@@ -4,9 +4,9 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
-def welcome(request):
+def index(request):
     context = {}
-    return render(request, 'articles/welcome.html', context)
+    return render(request, 'articles/index.html', context)
 
 @csrf_exempt
 def question(request):
@@ -27,6 +27,7 @@ def ajax(request):
     question = Questions.objects.get(pk=pk)
     data = {
         'question': question.question,
+        # 'question_img': question.image,
         'question_pk': question.pk,
         'question_ans1': question.answer1,
         'question_letter1': question.answer1_letter,

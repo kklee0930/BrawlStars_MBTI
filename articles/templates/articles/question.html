@@ -11,22 +11,25 @@
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
   <link rel="stylesheet" href="{% static 'css/question.css' %}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/question.css' %}">
 </head>
   
 <body>
-  {% block content %}
-    <link rel="stylesheet" href="{% static 'css/question.css' %}">
-    <div class="container my-5">
-      <div class="d-flex row text-center justify-content-center">
-        <h2 id="question" class="my-3">{{ question.question }}</h2>
-        <div class="my-3">
-          <img src="{% static 'images/favicon.png' %}" alt="" style="width:30%;">
-        </div>
-        <button type="button" id="answer1" class="answer my-3" data-pk="{{question.pk}}" data-letter="{{question.answer1_letter}}" data-mbti="{{mbti}}">{{question.answer1}}</button>
-        <button type="button" id="answer2" class="answer my-3" data-pk="{{question.pk}}" data-letter="{{question.answer2_letter}}" data-mbti="{{mbti}}">{{question.answer2}}</button>
+  <div class="wrapper">
+    <div id="main" class="mobile-display main container text-center">
+      <h1 id="question-tag" class="mb-4">Question <span id="question_no">{{question.pk}}</span> / 12</h1>
+      <h2 id="question">{{ question.question }}</h2>
+      <div class="my-4">
+        {% comment %} <img id="question-img" src="{% static 'images/favicon.png' %}" alt="" style="width:30%;"> {% endcomment %}
       </div>
+      <button type="button" id="answer1" class="answer my-2" data-pk="{{question.pk}}" data-letter="{{question.answer1_letter}}" data-mbti="{{mbti}}">{{question.answer1}}</button>
+      <button type="button" id="answer2" class="answer my-2" data-pk="{{question.pk}}" data-letter="{{question.answer2_letter}}" data-mbti="{{mbti}}">{{question.answer2}}</button>
     </div>
-  {% endblock content %}
+    <div id="loader" class="mobile-display container" style="display:none;">
+      <img src="{% static '/images/brawl_loading.gif' %}" alt="loading_gif" style="width:60%;">
+      <h4 class="my-5">어울리는 브롤러를 찾는 중이에요...</h4>
+    </div>
+  </div>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
@@ -48,7 +51,9 @@
       },
       success: function (data) {
         console.log('success')
+        $('#question_no').text(data['question_pk'])
         $('#question').text(data['question'])
+        //$('#question-img').attr('src', '{% static 'images/welcome.jpg' %}')
         $('#answer1').text(data['question_ans1'])
         $('#answer1').data('pk', data['question_pk'])
         $('#answer1').data('letter', data['question_letter1'])
@@ -60,8 +65,8 @@
       },
       error: function (request, status, error) {
         console.log('finished')
-        //$("div.main").css('display', 'none')
-        //$("div.loader").css('display', 'block')
+        $("#main").css('display', 'none')
+        $("#loader").css('display', 'block')
         mbti += letter
         /* setTimeout(() => {
           window.location.href = `/result/${mbti}`
