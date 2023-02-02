@@ -7,5 +7,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('question/', views.question, name='question'),
     path('ajax/', views.ajax, name="ajax"),
-    path('result/', views.result, name='result'),
+    path('result/<mbti>', views.result, name='result'),
 ]

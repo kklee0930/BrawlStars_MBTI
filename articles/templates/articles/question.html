@@ -27,7 +27,7 @@
     </div>
     <div id="loader" class="mobile-display container" style="display:none;">
       <img src="{% static '/images/brawl_loading.gif' %}" alt="loading_gif" style="width:60%;">
-      <h4 class="my-5">어울리는 브롤러를 찾는 중이에요...</h4>
+      <h4 class="my-5" style="color:white;">어울리는 브롤러를 찾는 중이에요...</h4>
     </div>
   </div>
 </body>
@@ -68,9 +68,9 @@
         $("#main").css('display', 'none')
         $("#loader").css('display', 'block')
         mbti += letter
-        /* setTimeout(() => {
+        setTimeout(() => {
           window.location.href = `/result/${mbti}`
-        }, 3500) */
+        }, 3500)
         }
       });
     })
