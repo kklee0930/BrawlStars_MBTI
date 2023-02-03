@@ -2,7 +2,6 @@
 {% load static %}
 {% block content %}
   <p>{{result_brawler.name}}</p>
-  {{result_brawler.image.url}}
-  <img src="/media/images/janet.jpg" alt="">
+  <img src="{{ result_brawler.image.url }}" alt="">
   <p>{{result_brawler.quote}}</p>
 {% endblock content %}
