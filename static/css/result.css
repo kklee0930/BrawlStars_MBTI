@@ -8,11 +8,6 @@ body {
     transform: translate(-50%, -50%); 
     text-align: center;
 }
-.result-info{
-    position: absolute;
-    top: 7%;
-    margin: auto;
-}
 .match-quote {
     font-weight: 700;
 }
