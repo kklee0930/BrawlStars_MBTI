@@ -1,13 +1,13 @@
 body {
     background-image: url('/static/images/welcome_bg.jpg');
 }
-.mobile-display{
+/* .mobile-display{
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); 
     text-align: center;
-}
+} */
 .match-quote {
     font-weight: 700;
 }
@@ -24,8 +24,11 @@ body {
     font-size: large;
 }
 .result-img {
-    /* width: 80%; */
+    width: 80%;
     height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .restart-btn {
     border: none;
