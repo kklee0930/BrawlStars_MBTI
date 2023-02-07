@@ -2,8 +2,7 @@ body {
     background-image: url('/static/images/welcome_bg.jpg');
 }
 .result-info{
-    position: absolute;
-    top: 7%;
+    position: static;
 }
 /* .mobile-display{
     position: absolute;
