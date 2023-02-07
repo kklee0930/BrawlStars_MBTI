@@ -1,35 +1,38 @@
 body {
     background-image: url('/static/images/welcome_bg.jpg');
-    right: -1px;
 }
-.mobile-display{
+.result-info{
+    position: absolute;
+    top: 7%;
+}
+/* .mobile-display{
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); 
     text-align: center;
-}
-.wrapper-div {
-    margin: auto;
-    width: 40%;
-}
-.welcome-img {
-    width: 90%;
-    border-radius: 30px;
-}
-.intro-txt {
+} */
+.brawler-name {
+    color: #f1d999;
     font-weight: 900;
-    font-size: x-large;
+    font-size: xx-large;
 }
-.start-btn {
+.quot-mark {
+    font-weight: 900;
+    font-size: xx-large;
+}
+.quote {
+    font-size: larger;
+}
+.result-img {
+    width: 80%;
+}
+.restart-btn {
     border: none;
     border-radius: 50px;
     height: 4rem;
-    width: 90%;
+    width: 70%;
     background-color: #ffd200;
     font-weight: bold;
     font-size: x-large;
-}
-@media (min:500px){
-    
 }

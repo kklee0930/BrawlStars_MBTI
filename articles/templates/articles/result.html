@@ -1,7 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-  <p>{{result_brawler.name}}</p>
-  <img src="{{ result_brawler.image.url }}" alt="">
-  <p>{{result_brawler.quote}}</p>
+  <link rel="stylesheet" href="{% static 'css/result.css' %}">
+  <div class="result-info text-center">
+    <h2 class="match-quote mb-4">당신과 어울리는 캐릭터는...</h2>
+    <h4 class="mb-4">
+      <span class="brawler-name">{{result_brawler.name}}</span></h4>
+    <img class="result-img mb-4" src="{{ result_brawler.image.url }}" alt="">
+    <div class="brawler-quote my-5">
+      <p>
+        <span class="quot-mark">"</span><span class="quote">{{result_brawler.quote}}</span>
+        <span class="quot-mark">"</span>
+      </p>
+    </div>
+    <button class="my-4 restart-btn" type="button" onclick="location.href='{% url 'articles:index' %}'">다시하기</button>
+  </div>
 {% endblock content %}
