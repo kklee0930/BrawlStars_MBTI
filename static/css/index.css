@@ -9,10 +9,6 @@ body {
     transform: translate(-50%, -50%); 
     text-align: center;
 }
-.wrapper-div {
-    margin: auto;
-    width: 40%;
-}
 .welcome-img {
     width: 90%;
     border-radius: 30px;
