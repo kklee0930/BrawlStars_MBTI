@@ -9,7 +9,11 @@
     <img class="result-img mb-4" src="{{ result_brawler.image.url }}" alt="">
     <div class="brawler-quote my-5">
       <p>
-        <span class="quot-mark">"</span><span class="quote">{{result_brawler.quote}}</span>
+        <span class="quot-mark">"</span>
+        <span class="quote">
+          {% autoescape off %}{{result_brawler.quote | escape}}
+          {% endautoescape %}
+        </span>
         <span class="quot-mark">"</span>
       </p>
     </div>
