@@ -18,12 +18,12 @@
   <div class="wrapper">
     <div id="main" class="mobile-display main container text-center">
       <h1 id="question-tag" class="mb-4">Question <span id="question_no">{{question.pk}}</span> / 12</h1>
-      <h2 id="question">{% autoescape off %}{{ question.question | escape }}{% endautoescape %}</h2>
+      <h2 id="question">{{ question.question }}</h2>
       <div class="my-4">
         {% comment %} <img id="question-img" src="{% static 'images/favicon.png' %}" alt="" style="width:30%;"> {% endcomment %}
       </div>
-      <button type="button" id="answer1" class="answer my-2" data-pk="{{question.pk}}" data-letter="{{question.answer1_letter}}" data-mbti="{{mbti}}">{% autoescape off %}{{question.answer1 | escape}}{% endautoescape %}</button>
-      <button type="button" id="answer2" class="answer my-2" data-pk="{{question.pk}}" data-letter="{{question.answer2_letter}}" data-mbti="{{mbti}}">{% autoescape off %}{{question.answer2 | escape}}{% endautoescape %}</button>
+      <button type="button" id="answer1" class="answer my-2" data-pk="{{question.pk}}" data-letter="{{question.answer1_letter}}" data-mbti="{{mbti}}">{{question.answer1}}</button>
+      <button type="button" id="answer2" class="answer my-2" data-pk="{{question.pk}}" data-letter="{{question.answer2_letter}}" data-mbti="{{mbti}}">{{question.answer2}}</button>
     </div>
     <div id="loader" class="mobile-display container" style="display:none;">
       <img src="{% static '/images/brawl_loading.gif' %}" alt="loading_gif" style="width:60%;">
