@@ -6,8 +6,8 @@ from imagekit.processors import ResizeToFill
 class Questions(models.Model):
     image = ProcessedImageField(
         upload_to='images',
-        processors=[ResizeToFill(500,500)],
-        options={'quality': 70},
+        # processors=[ResizeToFill(500,500)],
+        # options={'quality': 70},
         blank=True,
         null=True)
     question = models.TextField(max_length=200)
@@ -19,8 +19,8 @@ class Questions(models.Model):
 class Brawlers(models.Model):
     name = models.CharField(max_length=25)
     image = ProcessedImageField(
-        processors=[ResizeToFill(500,500)],
-        options={'quality': 70},
+        # processors=[ResizeToFill(500,500)],
+        # options={'quality': 70},
         blank=True,
         null=True
     )
