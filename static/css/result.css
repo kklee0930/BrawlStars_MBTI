@@ -5,13 +5,9 @@ body {
     position: absolute;
     top: 7%;
 }
-/* .mobile-display{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); 
-    text-align: center;
-} */
+.match-quote {
+    font-weight: 700;
+}
 .brawler-name {
     color: #f1d999;
     font-weight: 900;
@@ -22,7 +18,7 @@ body {
     font-size: xx-large;
 }
 .quote {
-    font-size: larger;
+    font-size: large;
 }
 .result-img {
     width: 80%;
