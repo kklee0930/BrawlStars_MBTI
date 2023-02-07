@@ -4,6 +4,9 @@ body {
 .result-info{
     position: absolute;
     top: 7%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }
 .match-quote {
     font-weight: 700;
