@@ -40,33 +40,33 @@ def ajax(request):
 def result(request, mbti):
     brawlers = Brawlers.objects.all()
     
-    # first = {}
-    # second = {}
-    # third = {}
-    # fourth = {}
-    # result = ''
+    first = {}
+    second = {}
+    third = {}
+    fourth = {}
+    result = ''
     
-    # first['I'] = mbti.count('I') # first['I'] == key / mbti.count('I') == value / ex: {'I': 1, 'E': 2}
-    # first['E'] = mbti.count('E') # first['E'] == key / mbti.count('E') == value / ex: {'I': 1, 'E': 2}
-    # key = max(first, key=first.get) # key = max(dict_name, key=dict_name.get)
-    # result += key # result += max_value를 가지는 key(ex: 'E')
+    first['I'] = mbti.count('I') # first['I'] == key / mbti.count('I') == value / ex: {'I': 1, 'E': 2}
+    first['E'] = mbti.count('E') # first['E'] == key / mbti.count('E') == value / ex: {'I': 1, 'E': 2}
+    key = max(first, key=first.get) # key = max(dict_name, key=dict_name.get)
+    result += key # result += max_value를 가지는 key(ex: 'E')
     
-    # second['S'] = mbti.count('S')
-    # second['N'] = mbti.count('N')
-    # key = max(second, key=second.get)
-    # result += key
+    second['S'] = mbti.count('S')
+    second['N'] = mbti.count('N')
+    key = max(second, key=second.get)
+    result += key
     
-    # third['T'] = mbti.count('T')
-    # third['F'] = mbti.count('F')
-    # key = max(third, key=third.get)
-    # result += key
+    third['T'] = mbti.count('T')
+    third['F'] = mbti.count('F')
+    key = max(third, key=third.get)
+    result += key
 
-    # fourth['P'] = mbti.count('P')
-    # fourth['J'] = mbti.count('J')
-    # key = max(fourth, key=fourth.get)
-    # result += key
+    fourth['P'] = mbti.count('P')
+    fourth['J'] = mbti.count('J')
+    key = max(fourth, key=fourth.get)
+    result += key
     
-    result = 'ESTP'
+    # result = 'ESTP'
 
     for brawler in brawlers:
         if brawler.mbti == result:
