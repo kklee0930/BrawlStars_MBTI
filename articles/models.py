@@ -1,12 +1,12 @@
 from django.db import models
 from imagekit.models import ProcessedImageField
-from imagekit.processors import ResizeToFill
+from imagekit.processors import ResizeToFit, ResizeToFill, resize
 
 # Create your models here.
 class Questions(models.Model):
     image = ProcessedImageField(
         upload_to='images',
-        # processors=[ResizeToFill(500,500)],
+        # processors=[ResizeToFit(height=230)],
         # options={'quality': 70},
         blank=True,
         null=True)
@@ -19,7 +19,7 @@ class Questions(models.Model):
 class Brawlers(models.Model):
     name = models.CharField(max_length=25)
     image = ProcessedImageField(
-        # processors=[ResizeToFill(500,500)],
+        # processors=[ResizeToFill(width=200, height=200)],
         # options={'quality': 70},
         blank=True,
         null=True
