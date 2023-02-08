@@ -6,9 +6,9 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 def index(request):
     visitors = Visitors.objects.get(pk=1)
-    count = visitors.counts
+    count = int(visitors.counts)
     context = {
-        'visitors': visitors,
+        'count': count,
     }
     return render(request, 'articles/index.html', context)
 
