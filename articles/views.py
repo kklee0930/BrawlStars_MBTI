@@ -1,11 +1,15 @@
 from django.shortcuts import render
-from .models import Questions, Brawlers
+from .models import Questions, Brawlers, Visitors
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def index(request):
-    context = {}
+    visitors = Visitors.objects.get(pk=1)
+    count = visitors.counts
+    context = {
+        'visitors': visitors,
+    }
     return render(request, 'articles/index.html', context)
 
 @csrf_exempt
@@ -39,6 +43,7 @@ def ajax(request):
 
 def result(request, mbti):
     brawlers = Brawlers.objects.all()
+    visitors = Visitors.objects.get(pk=1)
     
     first = {}
     second = {}
@@ -67,7 +72,9 @@ def result(request, mbti):
     result += key
     
     # result = 'ESTP'
-
+    
+    visitors.counts += 1
+    
     for brawler in brawlers:
         if brawler.mbti == result:
             result_brawler = Brawlers.objects.get(mbti=brawler.mbti)

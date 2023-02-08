@@ -26,3 +26,6 @@ class Brawlers(models.Model):
     )
     mbti = models.CharField(max_length=4)
     quote = models.TextField()
+    
+class Visitors(models.Model):
+    counts = models.PositiveIntegerField(default=0)
