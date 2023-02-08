@@ -28,4 +28,4 @@ class Brawlers(models.Model):
     quote = models.TextField()
     
 class Visitors(models.Model):
-    counts = models.PositiveIntegerField(default=0)
+    counts = models.PositiveIntegerField(default=1)

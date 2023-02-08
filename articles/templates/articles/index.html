@@ -6,8 +6,8 @@
     <h1 class="intro-txt">나와 딱 맞는 Brawl Stars 캐릭터는?</h1>
     <img class="welcome-img my-5" src="{% static 'images/welcome.jpg' %}" alt="">
     <button class="start-btn" type='button' onclick="location.href='{% url 'articles:question' %}'">시작하기</button>
-    <h3>지금까지
-      {{ count }}명이 참여했어요!</h3>
+    <h4 class="mt-5">지금까지
+      {{ count }}명이 참여했어요!</h4>
     <p class="warning mt-5">🔥본 테스트는 모바일 환경에 최적화되어 있습니다!<br>
       제발 모바일 환경에서 이용해주세요...</p>
   </div>
