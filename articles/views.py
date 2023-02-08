@@ -74,6 +74,7 @@ def result(request, mbti):
     # result = 'ESTP'
     
     visitors.counts += 1
+    visitors.save()
     
     for brawler in brawlers:
         if brawler.mbti == result:
