@@ -4,13 +4,6 @@ body {
 .result-info{
     position: static;
 }
-/* .mobile-display{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); 
-    text-align: center;
-} */
 .match-quote {
     font-weight: 700;
 }
@@ -28,7 +21,6 @@ body {
 }
 .result-img {
     width: 160px;
-    /* height: auto; */
     display: block;
     margin-left: auto;
     margin-right: auto;

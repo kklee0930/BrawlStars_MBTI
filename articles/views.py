@@ -3,7 +3,6 @@ from .models import Questions, Brawlers, Visitors
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-# Create your views here.
 def index(request):
     visitors = Visitors.objects.get(pk=1)
     count = int(visitors.counts)
@@ -31,7 +30,6 @@ def ajax(request):
     question = Questions.objects.get(pk=pk)
     data = {
         'question': question.question,
-        # 'question_img': question.image,
         'question_pk': question.pk,
         'question_ans1': question.answer1,
         'question_letter1': question.answer1_letter,
@@ -70,8 +68,6 @@ def result(request, mbti):
     fourth['J'] = mbti.count('J')
     key = max(fourth, key=fourth.get)
     result += key
-    
-    # result = 'ESTP'
     
     visitors.counts += 1
     visitors.save()
